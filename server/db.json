@@ -1,0 +1,18 @@
+{
+  "article": [
+    {
+      "id": 1,
+      "title": "State trong React",
+      "image": "",
+      "createdAt": "01/03/2024",
+      "status": "false"
+    },
+    {
+      "id": 2,
+      "title": "Tổng quan về React",
+      "image": "",
+      "createdAt": "03/03/2024",
+      "status": "false"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+/* ====== Base & theme ====== */
+:root{
+  --bg: #fff;
+  --border: #e9edf2;
+  --text: #1f2937;
+  --muted: #6b7280;
+
+  --success-bg: #e8f8ee;
+  --success-text: #138a4c;
+
+  --warn-bg: #fff3cd;
+  --warn-text: #a36b00;
+
+  --primary-bg: #e7f0ff;
+  --primary-text: #155eef;
+
+  --danger-bg: #ffe8e8;
+  --danger-text: #c81e1e;
+
+  --radius: 10px;
+}
+
+/* Card wrapper để có đổ bóng + bo góc giống ảnh */
+.table-card{
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;             /* bo góc cho header của table */
+  box-shadow: 0 4px 16px rgba(0,0,0,.04);
+}
+
+/* Cho cuộn ngang khi màn nhỏ */
+.table-card{ overflow-x: auto; }
+
+/* ====== Table ====== */
+.vp-table{
+  width: 100%;
+  border-collapse: separate;    /* để dùng border-spacing cho “khoảng cách ô” */
+  border-spacing: 0;            /* =0 như ảnh */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.vp-table thead th{
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 600;
+  background: #f8fafc;          /* header sáng */
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.vp-table tbody td{
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+/* Cột đầu nhỏ gọn cho STT */
+.vp-table td:first-child, .vp-table th:first-child{
+  width: 60px;
+  text-align: center;
+}
+
+/* Zebra + hover nhẹ như UI admin */
+.vp-table tbody tr:nth-child(odd){ background: #fcfdff; }
+.vp-table tbody tr:hover{ background: #f4f7fb; }
+
+/* Ảnh tròn nhỏ */
+.thumb{
+  width: 44px; height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+/* Badge trạng thái */
+.badge{
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.badge-success{ background: var(--success-bg); color: var(--success-text); border-color: #cdeedf; }
+
+/* Nút chức năng */
+.actions{ white-space: nowrap; }
+.btn{
+  appearance: none;
+  border: 1px solid transparent;
+  background: #f3f4f6;
+  color: #111827;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: transform .06s ease, box-shadow .06s ease, background .2s ease;
+}
+.btn:last-child{ margin-right: 0; }
+
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+
+/* Biến thể màu giống ảnh (vàng – xám; cam/primary; đỏ) */
+.btn-warning{ background: var(--warn-bg); color: var(--warn-text); border-color: #ffe9a7; }
+.btn-primary{ background: var(--primary-bg); color: var(--primary-text); border-color: #cfe0ff; }
+.btn-danger{  background: var(--danger-bg);  color: var(--danger-text);  border-color: #ffc9c9; }
+
+/* Responsive: thu gọn padding trên mobile */
+@media (max-width: 640px){
+  .vp-table thead th, .vp-table tbody td{ padding: 12px; }
+  .thumb{ width: 36px; height: 36px; }
+  .btn{ padding: 6px 10px; font-size: 12px; }
+}
